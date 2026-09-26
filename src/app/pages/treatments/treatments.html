@@ -1,0 +1,122 @@
+<main>
+
+  <section class="treatments-hero">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        Areas of Care
+      </p>
+
+      <h1>
+        Care that looks at
+        <em>the whole you.</em>
+      </h1>
+
+      <p class="hero-description">
+        Explore the areas of care offered at Dr. Shail HomeoCare.
+        Every consultation begins with understanding the individual,
+        their symptoms and their health history.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="treatments-section">
+
+    <div class="section-shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Our Treatments
+        </p>
+
+        <h2>
+          Areas we can
+          <em>help with.</em>
+        </h2>
+
+        <p>
+          Our approach focuses on individualized consultation
+          and holistic care rather than treating symptoms in isolation.
+        </p>
+
+      </div>
+
+
+      <div class="treatment-grid">
+
+        @for (treatment of treatments; track treatment.name) {
+
+          <article class="treatment-card">
+
+            <div class="treatment-icon">
+              {{ treatment.icon }}
+            </div>
+
+            <h3>
+              {{ treatment.name }}
+            </h3>
+
+            <p>
+              {{ treatment.description }}
+            </p>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="treatment-cta">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        Personalized Consultation
+      </p>
+
+      <h2>
+        Looking for personalized
+        <em>guidance?</em>
+      </h2>
+
+      <p>
+        Every consultation begins with understanding your individual
+        health concerns, symptoms and overall wellbeing.
+      </p>
+
+      <div class="cta-actions">
+
+        <a
+          class="button"
+          routerLink="/book-appointment"
+        >
+          Book an Appointment
+          <span>→</span>
+        </a>
+
+        <a
+          class="whatsapp-link"
+          [href]="whatsappLink"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>

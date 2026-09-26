@@ -1,0 +1,177 @@
+<header class="site-header">
+
+  <!-- Logo -->
+  <a
+    class="brand"
+    routerLink="/"
+    (click)="closeMenu()"
+  >
+    <span class="brand-mark">🌿</span>
+
+    <span>
+      <strong>Dr. Shail</strong>
+      <span class="brand-light">HomeoCare</span>
+    </span>
+  </a>
+
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </a>
+
+    <a
+      routerLink="/about"
+      routerLinkActive="active"
+    >
+      About Dr. Shail
+    </a>
+
+    <a
+      routerLink="/treatments"
+      routerLinkActive="active"
+    >
+      Treatments
+    </a>
+
+    <a
+      routerLink="/online-consultation"
+      routerLinkActive="active"
+    >
+      Online Consultation
+    </a>
+
+    <a
+      routerLink="/testimonials"
+      routerLinkActive="active"
+    >
+      Testimonials
+    </a>
+
+    <a
+      routerLink="/health-library"
+      routerLinkActive="active"
+    >
+      Health Library
+    </a>
+
+    <a
+      routerLink="/faqs"
+      routerLinkActive="active"
+    >
+      FAQs
+    </a>
+
+    <a
+      routerLink="/contact"
+      routerLinkActive="active"
+    >
+      Contact
+    </a>
+
+  </nav>
+
+
+  <!-- Desktop Appointment Button -->
+  <a
+    class="button button-small"
+    routerLink="/book-appointment"
+  >
+    Book Appointment
+  </a>
+
+
+  <!-- Mobile Menu Button -->
+  <button
+    class="menu-button"
+    type="button"
+    aria-label="Toggle navigation menu"
+    [attr.aria-expanded]="isMenuOpen"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+<!-- Mobile Navigation -->
+@if (isMenuOpen) {
+
+  <nav class="mobile-nav">
+
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+    >
+      Home
+    </a>
+
+    <a
+      routerLink="/about"
+      (click)="closeMenu()"
+    >
+      About Dr. Shail
+    </a>
+
+    <a
+      routerLink="/treatments"
+      (click)="closeMenu()"
+    >
+      Treatments
+    </a>
+
+    <a
+      routerLink="/online-consultation"
+      (click)="closeMenu()"
+    >
+      Online Consultation
+    </a>
+
+    <a
+      routerLink="/testimonials"
+      (click)="closeMenu()"
+    >
+      Testimonials
+    </a>
+
+    <a
+      routerLink="/health-library"
+      (click)="closeMenu()"
+    >
+      Health Library
+    </a>
+
+    <a
+      routerLink="/faqs"
+      (click)="closeMenu()"
+    >
+      FAQs
+    </a>
+
+    <a
+      routerLink="/contact"
+      (click)="closeMenu()"
+    >
+      Contact
+    </a>
+
+    <a
+      class="mobile-book-button"
+      routerLink="/book-appointment"
+      (click)="closeMenu()"
+    >
+      Book Appointment
+    </a>
+
+  </nav>
+
+}

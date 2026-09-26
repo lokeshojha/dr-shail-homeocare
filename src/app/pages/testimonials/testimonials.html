@@ -1,0 +1,141 @@
+<main>
+
+  <!-- Hero -->
+  <section class="testimonials-hero">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        Patient Experiences
+      </p>
+
+      <h1>
+        Stories from people
+        <em>we've cared for.</em>
+      </h1>
+
+      <p>
+        Every patient's journey is unique. Here are some experiences
+        shared about the consultation and care experience.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+
+    <div class="section-shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Patient Feedback
+        </p>
+
+        <h2>
+          Every experience
+          <em>matters.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="testimonial-grid">
+
+        @for (
+          testimonial of testimonials;
+          track $index
+        ) {
+
+          <article class="testimonial-card">
+
+            <div class="quote-mark">
+              “
+            </div>
+
+            <p class="testimonial-text">
+              {{ testimonial.text }}
+            </p>
+
+            <div class="testimonial-author">
+
+              <div class="author-avatar">
+                {{ testimonial.name.charAt(0) }}
+              </div>
+
+              <div>
+                <strong>
+                  {{ testimonial.name }}
+                </strong>
+
+                <span>
+                  {{ testimonial.location }}
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Trust section -->
+  <section class="trust-section">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        A Patient-Centered Approach
+      </p>
+
+      <h2>
+        Care starts with
+        <em>being heard.</em>
+      </h2>
+
+      <p>
+        Consultations are designed to give patients the time and
+        space to discuss their individual health concerns.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="testimonials-cta">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        Your Journey
+      </p>
+
+      <h2>
+        Ready to start your
+        <em>consultation?</em>
+      </h2>
+
+      <a
+        class="button"
+        routerLink="/book-appointment"
+      >
+        Book an Appointment →
+      </a>
+
+    </div>
+
+  </section>
+
+</main>

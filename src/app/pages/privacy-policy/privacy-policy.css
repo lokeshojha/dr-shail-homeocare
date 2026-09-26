@@ -1,0 +1,150 @@
+.policy-hero {
+  background: #f7f5ee;
+  padding: 105px 24px 95px;
+}
+
+.policy-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: #267562;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.policy-hero h1 {
+  max-width: 750px;
+  margin: 0;
+  color: #203d36;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(50px, 6vw, 74px);
+  line-height: .98;
+  letter-spacing: -2px;
+}
+
+.policy-hero h1 em {
+  color: #2d7c68;
+  font-style: italic;
+}
+
+.hero-text {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: #607871;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* Policy content */
+
+.policy-section {
+  padding: 90px 24px;
+  background: #ffffff;
+}
+
+.policy-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.last-updated {
+  margin: 0 0 55px;
+  color: #758681;
+  font-size: 13px;
+}
+
+.policy-block {
+  padding-bottom: 38px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid #e1e9e5;
+}
+
+.policy-block h2 {
+  margin: 0 0 16px;
+  color: #203d36;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.policy-block p {
+  margin: 0 0 13px;
+  color: #637771;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.policy-block p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Disclaimer */
+
+.policy-disclaimer {
+  margin-top: 45px;
+  padding: 25px 28px;
+  border-left: 4px solid #2d7c68;
+  border-radius: 4px;
+  background: #eef5f1;
+}
+
+.policy-disclaimer strong {
+  color: #203d36;
+  font-size: 14px;
+}
+
+.policy-disclaimer p {
+  margin: 8px 0 0;
+  color: #60756f;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* Back */
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  color: #267562;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .policy-hero {
+    padding: 75px 20px 70px;
+  }
+
+  .policy-section {
+    padding: 65px 20px;
+  }
+
+  .policy-hero h1 {
+    font-size: 48px;
+  }
+
+  .policy-block h2 {
+    font-size: 25px;
+  }
+
+  .policy-disclaimer {
+    padding: 22px;
+  }
+
+}

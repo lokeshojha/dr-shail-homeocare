@@ -1,0 +1,280 @@
+:host {
+  --primary: #2f6f5e;
+  --primary-dark: #1f5144;
+  --primary-light: #e4f1ec;
+  --cream: #f8f6ef;
+  --text: #243b36;
+  --muted: #667b76;
+  --white: #ffffff;
+
+  display: block;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section-shell {
+  width: min(1160px, 92vw);
+  margin: auto;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+
+  color: var(--primary);
+
+  font-size: .72rem;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+h1,
+h2 {
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0 0 25px;
+
+  font-size: clamp(3rem, 5vw, 4.7rem);
+}
+
+h2 {
+  margin: 0 0 18px;
+
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+}
+
+em {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+
+/* Hero */
+
+.treatments-hero {
+  padding: 100px 0 85px;
+
+  background: var(--cream);
+}
+
+.hero-description {
+  max-width: 650px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* Treatment section */
+
+.treatments-section {
+  padding: 95px 0;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 50px;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+
+/* Cards */
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.treatment-card {
+  min-height: 240px;
+
+  padding: 30px;
+
+  background: var(--white);
+
+  border: 1px solid #e3ebe7;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 30px rgba(31, 81, 68, .05);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 16px 40px rgba(31, 81, 68, .1);
+}
+
+.treatment-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 1.3rem;
+}
+
+.treatment-card h3 {
+  margin: 0 0 12px;
+
+  color: var(--primary-dark);
+
+  font-size: 1.35rem;
+}
+
+.treatment-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: .88rem;
+  line-height: 1.7;
+}
+
+
+/* CTA */
+
+.treatment-cta {
+  padding: 100px 0;
+
+  background: var(--primary-dark);
+
+  color: var(--white);
+
+  text-align: center;
+}
+
+.treatment-cta .section-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.treatment-cta .eyebrow {
+  color: #cde4db;
+}
+
+.treatment-cta h2 {
+  max-width: 750px;
+}
+
+.treatment-cta em {
+  color: #cfe8de;
+}
+
+.treatment-cta > .section-shell > p:not(.eyebrow) {
+  max-width: 620px;
+
+  color: #c7d9d4;
+
+  line-height: 1.75;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 14px 21px;
+
+  border-radius: 8px;
+
+  background: white;
+  color: var(--primary-dark);
+
+  text-decoration: none;
+
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.whatsapp-link {
+  color: #d5e8df;
+
+  text-decoration: none;
+
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+
+/* Mobile */
+
+@media (max-width: 850px) {
+
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .treatments-hero {
+    padding: 70px 0 60px;
+  }
+
+  .treatments-section {
+    padding: 70px 0;
+  }
+
+  .treatment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treatment-card {
+    min-height: auto;
+  }
+
+  .treatment-cta {
+    padding: 70px 0;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,198 @@
+<main>
+
+  <!-- Hero -->
+  <section class="hero section-shell">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow">
+        {{ clinic.name }}
+      </p>
+
+      <h1>
+        Healing Beyond
+        <em>Symptoms.</em>
+      </h1>
+
+      <p class="hero-text">
+        Personalized homeopathic care focused on
+        understanding the individual, not just the symptoms.
+      </p>
+
+      <p class="doctor-name">
+        {{ clinic.doctorName }}
+      </p>
+
+      <p class="doctor-title">
+        {{ clinic.doctorTitle }}
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="button"
+          routerLink="/book-appointment"
+        >
+          Book an Appointment
+          <span>→</span>
+        </a>
+
+        <a
+          class="whatsapp-link"
+          [href]="whatsappLink"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Us
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <div class="hero-decoration"></div>
+
+      <div class="doctor-placeholder">
+        Dr. Shaill
+      </div>
+
+      <div class="floating-card">
+        <strong>Personalized Care</strong>
+        <small>Holistic & patient-centered</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Trust -->
+  <section class="trust-section">
+
+    <div>
+      <strong>6+ Years</strong>
+      <span>Clinical Experience</span>
+    </div>
+
+    <div>
+      <strong>28,000+</strong>
+      <span>Patients Treated</span>
+    </div>
+
+    <div>
+      <strong>Personalized</strong>
+      <span>Treatment Plans</span>
+    </div>
+
+    <div>
+      <strong>Online & In-Person</strong>
+      <span>Consultations</span>
+    </div>
+
+  </section>
+
+
+  <!-- About Preview -->
+  <section class="about-section section-shell">
+
+    <div>
+
+      <p class="eyebrow">
+        About Dr. Shail
+      </p>
+
+      <h2>
+        Healthcare that
+        <em>understands you.</em>
+      </h2>
+
+      <p class="section-text">
+        Dr. Shail Pandey is a BHMS-qualified Homeopathic
+        Physician with extensive clinical experience in
+        treating acute and chronic illnesses through
+        classical homeopathy.
+      </p>
+
+      <a
+        class="text-link"
+        routerLink="/about"
+      >
+        Meet Dr. Shail →
+      </a>
+
+    </div>
+
+
+    <div class="about-card">
+
+      <div class="portrait-placeholder">
+        DS
+      </div>
+
+      <h3>
+        Dr. Shail Pandey, BHMS
+      </h3>
+
+      <p>
+        Homeopathic Physician
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Philosophy -->
+  <section class="philosophy-section">
+
+    <div class="section-shell philosophy-content">
+
+      <p class="eyebrow">
+        Our Philosophy
+      </p>
+
+      <h2>
+        We don't just treat diseases.
+        <br>
+        <em>We understand people.</em>
+      </h2>
+
+      <p>
+        Every patient receives individualized,
+        holistic, compassionate care.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section">
+
+    <div class="section-shell">
+
+      <p class="eyebrow">
+        Personalized Care
+      </p>
+
+      <h2>
+        Begin your journey toward
+        <em>better health.</em>
+      </h2>
+
+      <a
+        class="button"
+        routerLink="/book-appointment"
+      >
+        Book an Appointment →
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
