@@ -5,6 +5,8 @@ import {
   Validators
 } from '@angular/forms';
 
+import { CLINIC_CONFIG } from '../../shared/config/clinic.config';
+
 @Component({
   selector: 'app-book-appointment',
   standalone: true,
@@ -16,11 +18,14 @@ export class BookAppointment {
 
   submitted = false;
 
+  readonly clinic = CLINIC_CONFIG;
+
   readonly minDate = new Date()
     .toISOString()
     .split('T')[0];
 
   readonly appointmentForm;
+
   constructor(
     private readonly fb: FormBuilder
   ) {
@@ -77,5 +82,44 @@ export class BookAppointment {
       ]
 
     });
+  }
+
+  submitAppointment(): void {
+
+    if (this.appointmentForm.invalid) {
+      this.appointmentForm.markAllAsTouched();
+      return;
+    }
+
+    const appointment = this.appointmentForm.getRawValue();
+
+    const message = [
+      '*New Appointment Request*',
+      '',
+      `*Name:* ${appointment.name}`,
+      `*Phone:* ${appointment.phone}`,
+      `*Consultation:* ${appointment.consultationType}`,
+      `*Preferred Date:* ${appointment.preferredDate}`,
+      `*Preferred Time:* ${appointment.preferredTime}`,
+      `*Concern:* ${appointment.concern}`,
+      appointment.email
+        ? `*Email:* ${appointment.email}`
+        : '',
+      '',
+      'Please confirm the appointment availability.'
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    const whatsappUrl =
+      `https://wa.me/${this.clinic.whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(
+      whatsappUrl,
+      '_blank',
+      'noopener,noreferrer'
+    );
+
+    this.submitted = true;
   }
 }
