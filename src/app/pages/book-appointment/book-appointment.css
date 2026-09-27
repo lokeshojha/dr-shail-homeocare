@@ -223,7 +223,58 @@ form {
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(47, 119, 103, 0.1);
 }
+.phone-number {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 10px;
+}
 
+.country-code {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d9e4df;
+  border-radius: 10px;
+
+  background: #f5f8f6;
+  color: #263f38;
+
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+.phone-number input {
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+
+  border: 1px solid #d9e4df;
+  border-radius: 10px;
+
+  padding: 0 15px;
+
+  background: #fbfcfb;
+  color: #263f38;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.phone-number input::placeholder {
+  color: #9aa9a4;
+}
+
+.phone-number input:focus {
+  border-color: #2f7767;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(47, 119, 103, 0.1);
+}
 
 /* ================================
    DATE + TIME
@@ -467,6 +518,9 @@ form {
 
 
 @media (max-width: 600px) {
+  .phone-input {
+    grid-template-columns: 125px 1fr;
+  }
   .section-shell {
   width: min(100% - 32px, 1060px);
 }

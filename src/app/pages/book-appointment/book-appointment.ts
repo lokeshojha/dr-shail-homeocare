@@ -24,6 +24,21 @@ export class BookAppointment {
     .toISOString()
     .split('T')[0];
 
+  readonly countries = [
+    { name: 'India', code: '+91' },
+    { name: 'Bahrain', code: '+973' },
+    { name: 'United Arab Emirates', code: '+971' },
+    { name: 'Saudi Arabia', code: '+966' },
+    { name: 'Qatar', code: '+974' },
+    { name: 'Kuwait', code: '+965' },
+    { name: 'Oman', code: '+968' },
+    { name: 'United Kingdom', code: '+44' },
+    { name: 'United States', code: '+1' },
+    { name: 'Canada', code: '+1' },
+    { name: 'Australia', code: '+61' },
+    { name: 'Singapore', code: '+65' }
+  ];
+
   readonly appointmentForm;
 
   constructor(
@@ -40,11 +55,16 @@ export class BookAppointment {
         ]
       ],
 
+      countryCode: [
+        '+91',
+        Validators.required
+      ],
+
       phone: [
         '',
         [
           Validators.required,
-          Validators.pattern(/^[0-9+\-\s()]{7,20}$/)
+          Validators.pattern(/^[0-9\s()-]{7,15}$/)
         ]
       ],
 
@@ -93,11 +113,18 @@ export class BookAppointment {
 
     const appointment = this.appointmentForm.getRawValue();
 
+    // Remove spaces, brackets and other formatting
+    // before adding the country code.
+    const phoneNumber = appointment.phone.replace(/\D/g, '');
+
+    const fullPhoneNumber =
+      `${appointment.countryCode}${phoneNumber}`;
+
     const message = [
       '*New Appointment Request*',
       '',
       `*Name:* ${appointment.name}`,
-      `*Phone:* ${appointment.phone}`,
+      `*Phone:* ${fullPhoneNumber}`,
       `*Consultation:* ${appointment.consultationType}`,
       `*Preferred Date:* ${appointment.preferredDate}`,
       `*Preferred Time:* ${appointment.preferredTime}`,

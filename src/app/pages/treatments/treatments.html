@@ -28,44 +28,37 @@
 
     <div class="section-shell">
 
-      <div class="section-heading">
+<div class="section-heading">
 
-        <p class="eyebrow">
-          Our Treatments
-        </p>
+  <p class="eyebrow">Our Treatments</p>
 
-        <h2>
-          Areas we can
-          <em>help with.</em>
-        </h2>
+  <p>
+    Our approach focuses on individualized consultation
+    and holistic care rather than treating symptoms in isolation.
+  </p>
 
-        <p>
-          Our approach focuses on individualized consultation
-          and holistic care rather than treating symptoms in isolation.
-        </p>
-
-      </div>
+</div>
 
 
       <div class="treatment-grid">
 
         @for (treatment of treatments; track treatment.name) {
 
-          <article class="treatment-card">
+        <article class="treatment-card">
 
-            <div class="treatment-icon">
-              {{ treatment.icon }}
-            </div>
+          <div class="treatment-icon">
+            {{ treatment.icon }}
+          </div>
 
-            <h3>
-              {{ treatment.name }}
-            </h3>
+          <h3>
+            {{ treatment.name }}
+          </h3>
 
-            <p>
-              {{ treatment.description }}
-            </p>
+          <p>
+            {{ treatment.description }}
+          </p>
 
-          </article>
+        </article>
 
         }
 
@@ -96,20 +89,12 @@
 
       <div class="cta-actions">
 
-        <a
-          class="button"
-          routerLink="/book-appointment"
-        >
+        <a class="button" routerLink="/book-appointment">
           Book an Appointment
           <span>→</span>
         </a>
 
-        <a
-          class="whatsapp-link"
-          [href]="whatsappLink"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="whatsapp-link" [href]="whatsappLink" target="_blank" rel="noopener">
           WhatsApp Us
         </a>
 
