@@ -7,23 +7,30 @@
   --cream: #f8f6ef;
   --text: #243b36;
   --muted: #667b76;
+  --white: #ffffff;
+  --border: #dfe9e5;
 }
 
 * {
   box-sizing: border-box;
 }
 
+
+/* ---------------------------------
+   Common
+--------------------------------- */
+
 .section-shell {
   width: min(1160px, 92vw);
-  margin: auto;
+  margin: 0 auto;
 }
 
 .eyebrow {
-  margin-bottom: 16px;
+  margin: 0 0 14px;
 
   color: var(--primary);
 
-  font-size: .72rem;
+  font-size: .7rem;
   font-weight: 800;
 
   letter-spacing: .14em;
@@ -43,25 +50,22 @@ h2 {
   letter-spacing: -.04em;
 }
 
-h1 {
-  max-width: 650px;
-
-  margin: 0 0 25px;
-
-  font-size: clamp(3rem, 5vw, 5rem);
-}
-
-h2 {
-  font-size: clamp(2.3rem, 4vw, 3.7rem);
-}
-
 em {
   color: var(--primary);
   font-weight: 400;
 }
 
+
+/* ---------------------------------
+   Hero
+--------------------------------- */
+
 .hero {
-  min-height: 610px;
+  background: var(--white);
+}
+
+.hero-grid {
+  min-height: 550px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -70,56 +74,94 @@ em {
 
   gap: 70px;
 
-  padding: 70px 0;
+  padding: 58px 0 65px;
 }
 
-.hero-text,
-.section-text {
+
+/* Hero Content */
+
+.hero-copy {
+  max-width: 590px;
+}
+
+.hero-copy h1 {
+  max-width: 650px;
+
+  margin: 0 0 22px;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.hero-text {
   max-width: 580px;
+
+  margin: 0;
 
   color: var(--muted);
 
-  line-height: 1.8;
+  font-size: .95rem;
+  line-height: 1.75;
 }
 
 .doctor-name {
-  margin: 25px 0 4px;
+  margin: 24px 0 4px;
 
   color: var(--primary-dark);
 
+  font-size: .92rem;
   font-weight: 800;
 }
 
 .doctor-title {
+  margin: 0;
+
   color: var(--muted);
-  font-size: .85rem;
+
+  font-size: .78rem;
+  line-height: 1.5;
 }
+
+
+/* Hero Buttons */
 
 .hero-actions {
   display: flex;
   align-items: center;
+
   gap: 22px;
 
-  margin-top: 30px;
+  margin-top: 27px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 
-  padding: 14px 21px;
+  gap: 11px;
+
+  padding: 13px 19px;
 
   border-radius: 8px;
 
   background: var(--primary);
-  color: white;
+
+  color: var(--white);
 
   text-decoration: none;
 
-  font-size: .88rem;
+  font-size: .8rem;
   font-weight: 700;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.button:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-1px);
 }
 
 .whatsapp-link,
@@ -128,24 +170,40 @@ em {
 
   text-decoration: none;
 
-  font-size: .88rem;
+  font-size: .82rem;
   font-weight: 700;
+
+  transition: color .2s ease;
 }
 
+.whatsapp-link:hover,
+.text-link:hover {
+  color: var(--primary-dark);
+}
+
+
+/* ---------------------------------
+   Hero Doctor Visual
+--------------------------------- */
+
 .hero-visual {
-  height: 450px;
+  height: 430px;
 
   position: relative;
-  overflow: hidden;
 
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
+  overflow: hidden;
+
   background: var(--primary-light);
 
   border-radius: 120px 24px 120px 24px;
 }
+
+
+/* Decorative Circle */
 
 .hero-decoration {
   position: absolute;
@@ -153,47 +211,69 @@ em {
   width: 250px;
   height: 250px;
 
-  top: -70px;
-  right: -50px;
+  top: -65px;
+  right: -45px;
 
   border-radius: 50%;
 
   background: #d4e5cf;
 }
 
-.doctor-placeholder {
-  width: 250px;
-  height: 340px;
+
+/*
+  Temporary photo container.
+
+  Later:
+  Replace the placeholder with actual
+  <img> of Dr. Shail.
+*/
+
+.doctor-photo-placeholder {
+  width: 270px;
+  height: 365px;
+
+  position: relative;
+  z-index: 2;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: white;
+  overflow: hidden;
 
-  border-radius: 130px 130px 0 0;
+  background: var(--white);
 
-  box-shadow: 0 20px 50px rgba(34, 73, 62, .12);
+  border-radius: 145px 145px 0 0;
+
+  box-shadow:
+    0 20px 50px rgba(34, 73, 62, .12);
 
   color: var(--primary);
 
-  font-family: Georgia, serif;
-  font-size: 1.4rem;
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 1.35rem;
 }
+
+
+/* Floating Card */
 
 .floating-card {
   position: absolute;
 
-  left: 25px;
-  bottom: 35px;
+  left: 24px;
+  bottom: 32px;
 
-  padding: 15px 18px;
+  z-index: 3;
 
-  background: white;
+  padding: 14px 17px;
+
+  background: var(--white);
 
   border-radius: 12px;
 
-  box-shadow: 0 12px 35px rgba(34, 73, 62, .13);
+  box-shadow:
+    0 12px 35px rgba(34, 73, 62, .13);
 }
 
 .floating-card strong,
@@ -203,207 +283,387 @@ em {
 
 .floating-card strong {
   color: var(--primary-dark);
-  font-size: .86rem;
+
+  font-size: .82rem;
 }
 
 .floating-card small {
   margin-top: 4px;
 
   color: var(--muted);
-  font-size: .7rem;
+
+  font-size: .68rem;
 }
+
+
+/* ---------------------------------
+   Trust Section
+--------------------------------- */
 
 .trust-section {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
-  padding: 28px max(4vw, 28px);
+  padding: 27px max(4vw, 28px);
 
   background: var(--primary-dark);
-  color: white;
+
+  color: var(--white);
 }
 
-.trust-section > div {
+.trust-item {
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   gap: 5px;
 
   padding: 5px 20px;
 
-  border-right: 1px solid rgba(255,255,255,.15);
+  border-right: 1px solid rgba(255, 255, 255, .15);
 
   text-align: center;
 }
 
-.trust-section > div:last-child {
+.trust-item:last-child {
   border-right: 0;
 }
 
-.trust-section strong {
-  font-size: 1.05rem;
+.trust-item strong {
+  font-size: 1rem;
 }
 
-.trust-section span {
+.trust-item span {
   color: #d2e2dc;
-  font-size: .75rem;
+
+  font-size: .72rem;
 }
 
-.about-section {
-  min-height: 500px;
 
-  display: grid;
-  grid-template-columns: 1fr 300px;
-
-  align-items: center;
-
-  gap: 90px;
-
-  padding: 105px 0;
-}
-
-.about-card {
-  padding: 30px;
-
-  background: var(--primary-light);
-
-  border-radius: 20px;
-
-  text-align: center;
-}
-
-.portrait-placeholder {
-  width: 165px;
-  height: 165px;
-
-  display: grid;
-  place-items: center;
-
-  margin: 0 auto 20px;
-
-  border-radius: 50%;
-
-  background: #88aa9e;
-
-  color: white;
-
-  font-family: Georgia, serif;
-  font-size: 2.3rem;
-}
-
-.about-card h3 {
-  margin-bottom: 5px;
-
-  color: var(--primary-dark);
-}
-
-.about-card p {
-  margin: 0;
-
-  color: var(--muted);
-  font-size: .8rem;
-}
+/* ---------------------------------
+   Our Philosophy
+--------------------------------- */
 
 .philosophy-section {
-  padding: 100px 0;
+  padding: 90px 0;
 
   background: var(--cream);
-
-  text-align: center;
 }
 
-.philosophy-content {
-  display: flex;
-  flex-direction: column;
+.philosophy-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
   align-items: center;
+
+  gap: 75px;
+}
+
+
+/* Philosophy Content */
+
+.philosophy-content {
+  max-width: 550px;
 }
 
 .philosophy-content h2 {
-  max-width: 800px;
+  max-width: 550px;
+
+  margin: 0 0 22px;
+
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
 }
 
-.philosophy-content > p:last-child {
-  max-width: 550px;
+.philosophy-text {
+  max-width: 540px;
+
+  margin: 0 0 14px;
 
   color: var(--muted);
 
-  line-height: 1.8;
+  font-size: .86rem;
+
+  line-height: 1.75;
 }
 
-.cta-section {
-  padding: 100px 0;
+.philosophy-content .text-link {
+  display: inline-block;
 
-  background: var(--primary);
-
-  color: white;
-
-  text-align: center;
+  margin-top: 10px;
 }
 
-.cta-section h2 {
-  max-width: 750px;
-  margin: 0 auto 25px;
+
+/* Philosophy Visual */
+
+.philosophy-visual {
+  height: 420px;
+
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: var(--primary-light);
+
+  border-radius: 28px 120px 28px 120px;
 }
 
-.cta-section em {
-  color: #d5e8df;
+
+/*
+  Second doctor photo placeholder.
+
+  Replace with actual second photo later.
+*/
+
+.philosophy-photo-placeholder {
+  width: 260px;
+  height: 355px;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--white);
+
+  border-radius: 135px 135px 0 0;
+
+  box-shadow:
+    0 20px 50px rgba(34, 73, 62, .12);
+
+  color: var(--primary);
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 1.25rem;
 }
 
-.cta-section .button {
-  background: white;
-  color: var(--primary-dark);
+
+/* Decorative element */
+
+.philosophy-accent {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -55px;
+  top: -55px;
+
+  border-radius: 50%;
+
+  background: #d4e5cf;
 }
 
-@media (max-width: 760px) {
 
-  .hero {
-    grid-template-columns: 1fr;
+/* ---------------------------------
+   Tablet
+--------------------------------- */
 
-    padding: 55px 0;
+@media (max-width: 900px) {
 
+  .hero-grid {
     gap: 45px;
   }
 
-  .hero-visual {
-    order: -1;
-    height: 340px;
-  }
-
-  .doctor-placeholder {
-    width: 190px;
-    height: 270px;
-  }
-
-  .hero-actions {
-    flex-wrap: wrap;
+  .philosophy-grid {
+    gap: 45px;
   }
 
   .trust-section {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .trust-section > div {
-    border-right: 0;
+  .trust-item {
+    padding-left: 10px;
+    padding-right: 10px;
   }
+}
 
-  .about-section {
+
+/* ---------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 760px) {
+
+  /* Hero */
+
+  .hero-grid {
     grid-template-columns: 1fr;
 
     gap: 40px;
 
-    padding: 75px 0;
+    padding: 42px 0 50px;
   }
 
-  .about-card {
-    max-width: 330px;
-    margin: auto;
+  .hero-copy {
+    max-width: none;
   }
 
-  .philosophy-section,
-  .cta-section {
-    padding: 75px 0;
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
   }
 
+  .hero-text {
+    font-size: .88rem;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+
+    gap: 16px;
+  }
+
+
+  /* Hero Image */
+
+  .hero-visual {
+    order: -1;
+
+    height: 350px;
+
+    border-radius: 90px 20px 90px 20px;
+  }
+
+  .doctor-photo-placeholder {
+    width: 205px;
+    height: 285px;
+  }
+
+  .hero-decoration {
+    width: 190px;
+    height: 190px;
+
+    top: -50px;
+    right: -40px;
+  }
+
+  .floating-card {
+    left: 16px;
+    bottom: 20px;
+  }
+
+
+  /* Trust */
+
+  .trust-section {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    padding: 24px 15px;
+  }
+
+  .trust-item {
+    border-right: 0;
+
+    padding: 5px 8px;
+  }
+
+  .trust-item strong {
+    font-size: .9rem;
+  }
+
+  .trust-item span {
+    font-size: .67rem;
+  }
+
+
+  /* Philosophy */
+
+  .philosophy-section {
+    padding: 65px 0;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .philosophy-content {
+    max-width: none;
+  }
+
+  .philosophy-content h2 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .philosophy-visual {
+    height: 350px;
+
+    border-radius: 24px 90px 24px 90px;
+  }
+
+  .philosophy-photo-placeholder {
+    width: 205px;
+    height: 285px;
+  }
+
+  .philosophy-accent {
+    width: 140px;
+    height: 140px;
+
+    left: -45px;
+    top: -45px;
+  }
+}
+
+
+/* ---------------------------------
+   Small Mobile
+--------------------------------- */
+
+@media (max-width: 480px) {
+
+  .hero-grid {
+    padding-top: 32px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .whatsapp-link {
+    margin-left: 3px;
+  }
+
+  .trust-section {
+    gap: 15px 5px;
+  }
+
+  .trust-item strong {
+    font-size: .82rem;
+  }
+
+  .trust-item span {
+    font-size: .62rem;
+  }
+
+  .floating-card {
+    padding: 11px 13px;
+  }
+
+  .floating-card strong {
+    font-size: .75rem;
+  }
+
+  .floating-card small {
+    font-size: .62rem;
+  }
 }

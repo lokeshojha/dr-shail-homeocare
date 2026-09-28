@@ -1,128 +1,91 @@
-<section class="library-hero">
+<main>
 
-  <div class="library-hero-inner">
+  <!-- Hero -->
+  <section class="library-hero">
 
-    <p class="eyebrow">HEALTH LIBRARY</p>
+    <div class="section-shell">
 
-    <h1>
-      Understand your health,
-      <em>one step at a time.</em>
-    </h1>
+      <p class="eyebrow">
+        Health Library
+      </p>
 
-    <p class="hero-text">
-      Explore general health information and helpful topics designed
-      to support better conversations about your wellbeing.
-    </p>
+      <h1>
+        Understand your health,
+        <em>one step at a time.</em>
+      </h1>
 
-  </div>
-
-</section>
-
-
-<section class="library-section">
-
-  <div class="library-container">
-
-    <div class="section-intro">
-
-      <p class="eyebrow">EXPLORE TOPICS</p>
-
-      <h2>
-        Knowledge for
-        <em>better conversations.</em>
-      </h2>
-
-      <p>
-        Health information can help you prepare for a consultation,
-        but individual concerns should always be discussed with
-        an appropriate healthcare professional.
+      <p class="hero-description">
+        Explore general health information and helpful topics designed
+        to support better conversations about your wellbeing.
       </p>
 
     </div>
 
+  </section>
 
-    <div class="topic-grid">
 
-      @for (topic of topics; track topic.title) {
+  <!-- Topics -->
+  <section class="library-section">
 
-        <article class="topic-card">
+    <div class="section-shell">
 
-          <div class="topic-icon">
-            {{ topic.icon }}
-          </div>
+      <div class="section-heading">
 
-          <p class="topic-category">
-            {{ topic.category }}
-          </p>
+        <p class="eyebrow">
+          Explore Topics
+        </p>
 
-          <h3>
-            {{ topic.title }}
-          </h3>
+        <h2>
+          Knowledge for
+          <em>better conversations.</em>
+        </h2>
 
-          <p class="topic-description">
-            {{ topic.description }}
-          </p>
+        <p>
+          Health information can help you prepare for a consultation,
+          but individual concerns should always be discussed with
+          an appropriate healthcare professional.
+        </p>
 
-        </article>
+      </div>
 
-      }
+
+      <div class="topic-grid">
+
+        @for (topic of topics; track topic.title) {
+
+          <article class="topic-card">
+
+            <div class="topic-icon">
+              {{ topic.icon }}
+            </div>
+
+            <p class="topic-category">
+              {{ topic.category }}
+            </p>
+
+            <h3>
+              {{ topic.title }}
+            </h3>
+
+            <p class="topic-description">
+              {{ topic.description }}
+            </p>
+
+          </article>
+
+        }
+
+      </div>
+
+
+      <div class="library-disclaimer">
+        <sup>*</sup>
+        This information is for general educational purposes only and
+        is not a substitute for professional medical advice or diagnosis.
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
-
-
-<section class="library-note">
-
-  <div class="library-note-inner">
-
-    <div>
-
-      <p class="eyebrow">IMPORTANT</p>
-
-      <h2>
-        Information is not a
-        <em>diagnosis.</em>
-      </h2>
-
-    </div>
-
-    <p>
-      The information provided on this page is for general
-      educational purposes. It should not be used as a substitute
-      for professional medical advice, diagnosis or emergency care.
-    </p>
-
-  </div>
-
-</section>
-
-
-<section class="library-cta">
-
-  <div class="library-cta-inner">
-
-    <p class="eyebrow">HAVE A HEALTH CONCERN?</p>
-
-    <h2>
-      Start with a
-      <em>conversation.</em>
-    </h2>
-
-    <p>
-      Share your concerns during a consultation so they can be
-      understood in the context of your individual health history.
-    </p>
-
-    <a
-      class="button"
-      routerLink="/book-appointment"
-    >
-      Book an Appointment →
-    </a>
-
-  </div>
-
-</section>
+</main>

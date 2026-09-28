@@ -19,8 +19,10 @@
   justify-content: space-between;
   gap: 28px;
 
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid #e6ece8;
+
+  box-shadow: 0 2px 14px rgba(31, 81, 68, 0.06);
 
   position: sticky;
   top: 0;
@@ -162,7 +164,7 @@
 @media (max-width: 900px) {
 
   .desktop-nav,
-  .site-header > .button {
+  .site-header>.button {
     display: none;
   }
 

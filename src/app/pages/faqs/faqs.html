@@ -1,104 +1,99 @@
-<section class="faq-hero">
-  <div class="faq-hero-inner">
+<main>
 
-    <p class="eyebrow">FREQUENTLY ASKED QUESTIONS</p>
+  <!-- Hero -->
+  <section class="faq-hero">
 
-    <h1>
-      Answers to help you
-      <em>feel informed.</em>
-    </h1>
+    <div class="section-shell">
 
-    <p class="hero-text">
-      Find answers to common questions about consultations,
-      appointments and the care experience at Dr. Shail HomeoCare.
-    </p>
+      <p class="eyebrow">
+        Frequently Asked Questions
+      </p>
 
-  </div>
-</section>
+      <h1>
+        Answers to help you
+        <em>feel informed.</em>
+      </h1>
 
+      <p class="hero-description">
+        Find answers to common questions about consultations,
+        appointments and the care experience at Dr. Shail HomeoCare.
+      </p>
 
-<section class="faq-section">
-
-  <div class="faq-container">
-
-    <div class="section-intro">
-      <p class="eyebrow">GOOD TO KNOW</p>
-
-      <h2>
-        Before your
-        <em>consultation.</em>
-      </h2>
     </div>
 
-
-    <div class="faq-list">
-
-      @for (faq of faqs; track $index) {
-
-        <div class="faq-item">
-
-          <button
-            class="faq-question"
-            type="button"
-            [attr.aria-expanded]="openFaq === $index"
-            [attr.aria-controls]="'faq-answer-' + $index"
-            (click)="toggleFaq($index)"
-          >
-
-            <span>{{ faq.question }}</span>
-
-            <span class="faq-icon">
-              {{ openFaq === $index ? '−' : '+' }}
-            </span>
-
-          </button>
+  </section>
 
 
-          @if (openFaq === $index) {
+  <!-- FAQ -->
+  <section class="faq-section">
 
-            <div
-              class="faq-answer"
-              [id]="'faq-answer-' + $index"
+    <div class="section-shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Good to Know
+        </p>
+
+        <h2>
+          Before your
+          <em>consultation.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="faq-list">
+
+        @for (faq of faqs; track $index) {
+
+          <div class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              [attr.aria-expanded]="openFaq === $index"
+              [attr.aria-controls]="'faq-answer-' + $index"
+              (click)="toggleFaq($index)"
             >
-              <p>{{ faq.answer }}</p>
-            </div>
 
-          }
+              <span>
+                {{ faq.question }}
+              </span>
 
-        </div>
+              <span
+                class="faq-icon"
+                aria-hidden="true"
+              >
+                {{ openFaq === $index ? '−' : '+' }}
+              </span>
 
-      }
+            </button>
+
+
+            @if (openFaq === $index) {
+
+              <div
+                class="faq-answer"
+                [id]="'faq-answer-' + $index"
+              >
+
+                <p>
+                  {{ faq.answer }}
+                </p>
+
+              </div>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
-
-
-<section class="faq-cta">
-
-  <div class="faq-cta-inner">
-
-    <p class="eyebrow">STILL HAVE QUESTIONS?</p>
-
-    <h2>
-      Let's start with a
-      <em>conversation.</em>
-    </h2>
-
-    <p>
-      If you have questions that are not answered here,
-      you can request a consultation and discuss your concerns directly.
-    </p>
-
-    <a
-      class="button"
-      routerLink="/book-appointment"
-    >
-      Book an Appointment →
-    </a>
-
-  </div>
-
-</section>
+</main>

@@ -2,9 +2,12 @@
 
   <!-- Hero -->
   <section class="appointment-hero">
+
     <div class="section-shell">
 
-      <p class="eyebrow">Book an Appointment</p>
+      <p class="eyebrow">
+        Book an Appointment
+      </p>
 
       <h1>
         Start your journey toward
@@ -18,10 +21,11 @@
       </p>
 
     </div>
+
   </section>
 
 
-  <!-- Appointment Form -->
+  <!-- Appointment -->
   <section class="appointment-section">
 
     <div class="section-shell appointment-layout">
@@ -29,7 +33,9 @@
       <!-- Information -->
       <div class="appointment-info">
 
-        <p class="eyebrow">Appointment Request</p>
+        <p class="eyebrow">
+          Appointment Request
+        </p>
 
         <h2>
           Tell us a little
@@ -42,12 +48,18 @@
           availability.
         </p>
 
+
         <div class="request-note">
 
-          <span class="note-icon">✓</span>
+          <span class="note-icon">
+            ✓
+          </span>
 
           <div>
-            <h3>What happens next?</h3>
+
+            <h3>
+              What happens next?
+            </h3>
 
             <p>
               After submitting the form, WhatsApp will open with
@@ -59,6 +71,7 @@
               Your appointment will be confirmed by the clinic
               after availability is checked.
             </p>
+
           </div>
 
         </div>
@@ -71,307 +84,359 @@
 
         @if (!submitted) {
 
-        <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()" novalidate>
+          <form
+            [formGroup]="appointmentForm"
+            (ngSubmit)="submitAppointment()"
+            novalidate
+          >
 
-          <!-- Name -->
-          <div class="form-group">
+            <!-- Name -->
+            <div class="form-group">
 
-            <label for="name">
-              Full Name
-              <span>*</span>
-            </label>
+              <label for="name">
+                Full Name
+                <span>*</span>
+              </label>
 
-            <input id="name" type="text" formControlName="name" placeholder="Enter your full name"
-              autocomplete="name" />
+              <input
+                id="name"
+                type="text"
+                formControlName="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+              />
 
-            @if (
-            appointmentForm.controls.name.touched &&
-            appointmentForm.controls.name.invalid
-            ) {
-            <small class="error-message">
-              Please enter your name.
-            </small>
-            }
+              @if (
+                appointmentForm.controls.name.touched &&
+                appointmentForm.controls.name.invalid
+              ) {
 
-          </div>
+                <small class="error-message">
+                  Please enter your name.
+                </small>
 
-
-          <!-- Phone -->
-          <div class="form-group">
-
-            <label for="countryCode">
-              Country
-              <span>*</span>
-            </label>
-
-            <select id="countryCode" formControlName="countryCode">
-              @for (country of countries; track country.code + country.name) {
-              <option [value]="country.code">
-                {{ country.name }}
-              </option>
               }
-            </select>
 
-          </div>
+            </div>
 
 
-          <div class="form-group">
+            <!-- Country -->
+            <div class="form-group">
 
-            <label for="phone">
-              Phone Number
-              <span>*</span>
-            </label>
+              <label for="countryCode">
+                Country
+                <span>*</span>
+              </label>
 
-            <div class="phone-number">
+              <select
+                id="countryCode"
+                formControlName="countryCode"
+              >
 
-              <div class="country-code">
-                {{ appointmentForm.controls.countryCode.value }}
+                @for (
+                  country of countries;
+                  track country.code + country.name
+                ) {
+
+                  <option [value]="country.code">
+                    {{ country.name }}
+                  </option>
+
+                }
+
+              </select>
+
+            </div>
+
+
+            <!-- Phone -->
+            <div class="form-group">
+
+              <label for="phone">
+                Phone Number
+                <span>*</span>
+              </label>
+
+              <div class="phone-number">
+
+                <div class="country-code">
+                  {{ appointmentForm.controls.countryCode.value }}
+                </div>
+
+                <input
+                  id="phone"
+                  type="tel"
+                  formControlName="phone"
+                  placeholder="Enter phone number"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                />
+
               </div>
 
-              <input id="phone" type="tel" formControlName="phone" placeholder="Enter phone number" autocomplete="tel"
-                inputmode="numeric" />
-
-            </div>
-
-            @if (
-            appointmentForm.controls.phone.touched &&
-            appointmentForm.controls.phone.invalid
-            ) {
-            <small class="error-message">
-              Please enter a valid phone number.
-            </small>
-            }
-
-          </div>
-
-
-          <!-- Email -->
-          <div class="form-group">
-
-            <label for="email">
-              Email Address
-              <small>(Optional)</small>
-            </label>
-
-            <input id="email" type="email" formControlName="email" placeholder="Enter your email address"
-              autocomplete="email" />
-
-            @if (
-            appointmentForm.controls.email.touched &&
-            appointmentForm.controls.email.invalid
-            ) {
-            <small class="error-message">
-              Please enter a valid email address.
-            </small>
-            }
-
-          </div>
-
-
-          <!-- Consultation Type -->
-          <div class="form-group">
-
-            <label for="consultationType">
-              Consultation Type
-              <span>*</span>
-            </label>
-
-            <select id="consultationType" formControlName="consultationType">
-              <!-- <option value="Online Consultation">
-                Online Consultation
-              </option>
-
-              <option value="In-Person Consultation">
-                In-Person Consultation
-              </option> -->
-              <option value="Online Consultation">
-                Online Consultation
-              </option>
-
-              <option value="In-Person — Bahrain">
-                In-Person — Bahrain
-              </option>
-
-              <option value="In-Person — Lucknow" disabled>
-                In-Person — Lucknow (Currently unavailable)
-              </option>
-
-              <option value="In-Person — Prayagraj" disabled>
-                In-Person — Prayagraj (Currently unavailable)
-              </option>
-            </select>
-
-          </div>
-
-
-          <!-- Date + Time -->
-          <div class="form-row">
-
-            <div class="form-group">
-
-              <label for="preferredDate">
-                Preferred Date
-                <span>*</span>
-              </label>
-
-              <input id="preferredDate" type="date" formControlName="preferredDate" [min]="minDate" />
-
               @if (
-              appointmentForm.controls.preferredDate.touched &&
-              appointmentForm.controls.preferredDate.invalid
+                appointmentForm.controls.phone.touched &&
+                appointmentForm.controls.phone.invalid
               ) {
-              <small class="error-message">
-                Please select a preferred date.
-              </small>
+
+                <small class="error-message">
+                  Please enter a valid phone number.
+                </small>
+
               }
 
             </div>
 
 
+            <!-- Email -->
             <div class="form-group">
 
-              <label for="preferredTime">
-                Preferred Time
-                <span>*</span>
+              <label for="email">
+                Email Address
+                <small>(Optional)</small>
               </label>
 
-              <input id="preferredTime" type="time" formControlName="preferredTime" />
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+              />
 
               @if (
-              appointmentForm.controls.preferredTime.touched &&
-              appointmentForm.controls.preferredTime.invalid
+                appointmentForm.controls.email.touched &&
+                appointmentForm.controls.email.invalid
               ) {
-              <small class="error-message">
-                Please select a preferred time.
-              </small>
+
+                <small class="error-message">
+                  Please enter a valid email address.
+                </small>
+
               }
 
             </div>
 
-          </div>
+
+            <!-- Consultation Type -->
+            <div class="form-group">
+
+              <label for="consultationType">
+                Consultation Type
+                <span>*</span>
+              </label>
+
+              <select
+                id="consultationType"
+                formControlName="consultationType"
+              >
+
+                <option value="Online Consultation">
+                  Online Consultation
+                </option>
+
+                <option value="In-Person — Bahrain">
+                  In-Person — Bahrain
+                </option>
+
+                <option
+                  value="In-Person — Lucknow"
+                  disabled
+                >
+                  In-Person — Lucknow (Currently unavailable)
+                </option>
+
+                <option
+                  value="In-Person — Prayagraj"
+                  disabled
+                >
+                  In-Person — Prayagraj (Currently unavailable)
+                </option>
+
+              </select>
+
+            </div>
 
 
-          <!-- Concern -->
-          <div class="form-group">
+            <!-- Date + Time -->
+            <div class="form-row">
 
-            <label for="concern">
-              Health Concern
-              <span>*</span>
-            </label>
+              <div class="form-group">
 
-            <textarea id="concern" rows="5" formControlName="concern"
-              placeholder="Briefly describe the reason for your consultation"></textarea>
+                <label for="preferredDate">
+                  Preferred Date
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="preferredDate"
+                  type="date"
+                  formControlName="preferredDate"
+                  [min]="minDate"
+                />
+
+                @if (
+                  appointmentForm.controls.preferredDate.touched &&
+                  appointmentForm.controls.preferredDate.invalid
+                ) {
+
+                  <small class="error-message">
+                    Please select a preferred date.
+                  </small>
+
+                }
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="preferredTime">
+                  Preferred Time
+                  <span>*</span>
+                </label>
+
+                <input
+                  id="preferredTime"
+                  type="time"
+                  formControlName="preferredTime"
+                />
+
+                @if (
+                  appointmentForm.controls.preferredTime.touched &&
+                  appointmentForm.controls.preferredTime.invalid
+                ) {
+
+                  <small class="error-message">
+                    Please select a preferred time.
+                  </small>
+
+                }
+
+              </div>
+
+            </div>
+
+
+            <!-- Concern -->
+            <div class="form-group">
+
+              <label for="concern">
+                Health Concern
+                <span>*</span>
+              </label>
+
+              <textarea
+                id="concern"
+                rows="5"
+                formControlName="concern"
+                placeholder="Briefly describe the reason for your consultation"
+              ></textarea>
+
+              @if (
+                appointmentForm.controls.concern.touched &&
+                appointmentForm.controls.concern.invalid
+              ) {
+
+                <small class="error-message">
+                  Please describe your concern in at least 10 characters.
+                </small>
+
+              }
+
+            </div>
+
+
+            <!-- Consent -->
+            <div class="consent-group">
+
+              <input
+                id="consent"
+                type="checkbox"
+                formControlName="consent"
+              />
+
+              <label for="consent">
+                I understand that this is an appointment request
+                and that the clinic will confirm availability
+                before the appointment is considered confirmed.
+              </label>
+
+            </div>
+
 
             @if (
-            appointmentForm.controls.concern.touched &&
-            appointmentForm.controls.concern.invalid
+              appointmentForm.controls.consent.touched &&
+              appointmentForm.controls.consent.invalid
             ) {
-            <small class="error-message">
-              Please describe your concern in at least 10 characters.
-            </small>
+
+              <small class="error-message consent-error">
+                Please confirm your consent before continuing.
+              </small>
+
             }
 
-          </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Send Appointment Request on WhatsApp
+              <span>→</span>
+            </button>
 
 
-          <!-- Consent -->
-          <div class="consent-group">
+            <p class="form-note">
+              WhatsApp will open with your appointment details
+              pre-filled. You will need to press Send to submit
+              the request to the clinic.
+            </p>
 
-            <input id="consent" type="checkbox" formControlName="consent" />
-
-            <label for="consent">
-              I understand that this is an appointment request
-              and that the clinic will confirm availability
-              before the appointment is considered confirmed.
-            </label>
-
-          </div>
-
-          @if (
-          appointmentForm.controls.consent.touched &&
-          appointmentForm.controls.consent.invalid
-          ) {
-          <small class="error-message consent-error">
-            Please confirm your consent before continuing.
-          </small>
-          }
-
-
-          <!-- Submit -->
-          <button type="submit" class="submit-button">
-            Send Appointment Request on WhatsApp
-            <span>→</span>
-          </button>
-
-
-          <p class="form-note">
-            WhatsApp will open with your appointment details
-            pre-filled. You will need to press Send to submit
-            the request to the clinic.
-          </p>
-
-        </form>
+          </form>
 
         } @else {
 
-        <!-- Success State -->
-        <div class="success-state">
+          <!-- Success State -->
+          <div class="success-state">
 
-          <div class="success-icon">
-            ✓
+            <div class="success-icon">
+              ✓
+            </div>
+
+            <p class="eyebrow">
+              Request Ready
+            </p>
+
+            <h2>
+              Your appointment request is
+              <em>ready to send.</em>
+            </h2>
+
+            <p>
+              WhatsApp should have opened with your appointment
+              details pre-filled. Please send the message to the
+              clinic so your request can be reviewed.
+            </p>
+
+            <p class="confirmation-note">
+              Your appointment is not confirmed until the clinic
+              checks availability and confirms it with you.
+            </p>
+
+            <button
+              type="button"
+              class="secondary-button"
+              (click)="submitted = false"
+            >
+              Submit Another Request
+            </button>
+
           </div>
-
-          <p class="eyebrow">
-            Request Ready
-          </p>
-
-          <h2>
-            Your appointment request is
-            <em>ready to send.</em>
-          </h2>
-
-          <p>
-            WhatsApp should have opened with your appointment
-            details pre-filled. Please send the message to the
-            clinic so your request can be reviewed.
-          </p>
-
-          <p class="confirmation-note">
-            Your appointment is not confirmed until the clinic
-            checks availability and confirms it with you.
-          </p>
-
-          <button type="button" class="secondary-button" (click)="submitted = false">
-            Submit Another Request
-          </button>
-
-        </div>
 
         }
 
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Bottom CTA -->
-  <section class="appointment-cta">
-
-    <div class="section-shell">
-
-      <p class="eyebrow">Need Help?</p>
-
-      <h2>
-        Have questions before
-        <em>booking?</em>
-      </h2>
-
-      <p>
-        You can contact the clinic through WhatsApp before
-        submitting an appointment request.
-      </p>
 
     </div>
 
