@@ -16,9 +16,9 @@
 }
 
 
-/* ---------------------------------
-   Common
---------------------------------- */
+/* =================================
+   COMMON
+================================= */
 
 .section-shell {
   width: min(1160px, 92vw);
@@ -30,24 +30,24 @@
 
   color: var(--primary);
 
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 800;
 
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 h1,
 h2,
 h3 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
 }
 
 h1,
 h2 {
   line-height: 1.06;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
 
 em {
@@ -56,9 +56,9 @@ em {
 }
 
 
-/* ---------------------------------
-   Hero
---------------------------------- */
+/* =================================
+   HERO
+================================= */
 
 .hero {
   background: var(--white);
@@ -68,6 +68,7 @@ em {
   min-height: 550px;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   align-items: center;
@@ -78,7 +79,9 @@ em {
 }
 
 
-/* Hero Content */
+/* ---------------------------------
+   Hero Content
+--------------------------------- */
 
 .hero-copy {
   max-width: 590px;
@@ -99,7 +102,8 @@ em {
 
   color: var(--muted);
 
-  font-size: .95rem;
+  font-size: 0.95rem;
+
   line-height: 1.75;
 }
 
@@ -108,7 +112,8 @@ em {
 
   color: var(--primary-dark);
 
-  font-size: .92rem;
+  font-size: 0.92rem;
+
   font-weight: 800;
 }
 
@@ -117,15 +122,19 @@ em {
 
   color: var(--muted);
 
-  font-size: .78rem;
+  font-size: 0.78rem;
+
   line-height: 1.5;
 }
 
 
-/* Hero Buttons */
+/* ---------------------------------
+   Hero Actions
+--------------------------------- */
 
 .hero-actions {
   display: flex;
+
   align-items: center;
 
   gap: 22px;
@@ -135,6 +144,7 @@ em {
 
 .button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -150,12 +160,13 @@ em {
 
   text-decoration: none;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
+
   font-weight: 700;
 
   transition:
-    background .2s ease,
-    transform .2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .button:hover {
@@ -170,10 +181,11 @@ em {
 
   text-decoration: none;
 
-  font-size: .82rem;
+  font-size: 0.82rem;
+
   font-weight: 700;
 
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 .whatsapp-link:hover,
@@ -182,9 +194,9 @@ em {
 }
 
 
-/* ---------------------------------
-   Hero Doctor Visual
---------------------------------- */
+/* =================================
+   HERO VISUAL
+================================= */
 
 .hero-visual {
   height: 430px;
@@ -192,6 +204,7 @@ em {
   position: relative;
 
   display: flex;
+
   align-items: flex-end;
   justify-content: center;
 
@@ -203,7 +216,9 @@ em {
 }
 
 
-/* Decorative Circle */
+/* ---------------------------------
+   Decorative Circle
+--------------------------------- */
 
 .hero-decoration {
   position: absolute;
@@ -220,24 +235,17 @@ em {
 }
 
 
-/*
-  Temporary photo container.
+/* ---------------------------------
+   Doctor Photo
+--------------------------------- */
 
-  Later:
-  Replace the placeholder with actual
-  <img> of Dr. Shail.
-*/
-
-.doctor-photo-placeholder {
+.doctor-photo {
   width: 270px;
   height: 365px;
 
   position: relative;
-  z-index: 2;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2;
 
   overflow: hidden;
 
@@ -246,17 +254,28 @@ em {
   border-radius: 145px 145px 0 0;
 
   box-shadow:
-    0 20px 50px rgba(34, 73, 62, .12);
+    0 20px 50px rgba(34, 73, 62, 0.12);
+}
 
-  color: var(--primary);
+.doctor-photo img {
+  width: 100%;
+  height: 100%;
 
-  font-family: Georgia, 'Times New Roman', serif;
+  display: block;
 
-  font-size: 1.35rem;
+  object-fit: cover;
+
+  /*
+    Photo ke top ko priority de rahe hain
+    because original image portrait hai.
+  */
+  object-position: center top;
 }
 
 
-/* Floating Card */
+/* ---------------------------------
+   Floating Card
+--------------------------------- */
 
 .floating-card {
   position: absolute;
@@ -264,7 +283,7 @@ em {
   left: 24px;
   bottom: 32px;
 
-  z-index: 3;
+  z-index: 4;
 
   padding: 14px 17px;
 
@@ -273,7 +292,7 @@ em {
   border-radius: 12px;
 
   box-shadow:
-    0 12px 35px rgba(34, 73, 62, .13);
+    0 12px 35px rgba(34, 73, 62, 0.13);
 }
 
 .floating-card strong,
@@ -284,7 +303,7 @@ em {
 .floating-card strong {
   color: var(--primary-dark);
 
-  font-size: .82rem;
+  font-size: 0.82rem;
 }
 
 .floating-card small {
@@ -292,13 +311,13 @@ em {
 
   color: var(--muted);
 
-  font-size: .68rem;
+  font-size: 0.68rem;
 }
 
 
-/* ---------------------------------
-   Trust Section
---------------------------------- */
+/* =================================
+   TRUST SECTION
+================================= */
 
 .trust-section {
   display: grid;
@@ -314,6 +333,7 @@ em {
 
 .trust-item {
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
@@ -322,7 +342,7 @@ em {
 
   padding: 5px 20px;
 
-  border-right: 1px solid rgba(255, 255, 255, .15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 
   text-align: center;
 }
@@ -338,13 +358,13 @@ em {
 .trust-item span {
   color: #d2e2dc;
 
-  font-size: .72rem;
+  font-size: 0.72rem;
 }
 
 
-/* ---------------------------------
-   Our Philosophy
---------------------------------- */
+/* =================================
+   OUR PHILOSOPHY
+================================= */
 
 .philosophy-section {
   padding: 90px 0;
@@ -363,7 +383,9 @@ em {
 }
 
 
-/* Philosophy Content */
+/* ---------------------------------
+   Philosophy Content
+--------------------------------- */
 
 .philosophy-content {
   max-width: 550px;
@@ -384,7 +406,7 @@ em {
 
   color: var(--muted);
 
-  font-size: .86rem;
+  font-size: 0.86rem;
 
   line-height: 1.75;
 }
@@ -396,7 +418,9 @@ em {
 }
 
 
-/* Philosophy Visual */
+/* ---------------------------------
+   Philosophy Photo Area
+--------------------------------- */
 
 .philosophy-visual {
   height: 420px;
@@ -404,6 +428,7 @@ em {
   position: relative;
 
   display: flex;
+
   align-items: flex-end;
   justify-content: center;
 
@@ -415,39 +440,39 @@ em {
 }
 
 
-/*
-  Second doctor photo placeholder.
+/* Temporary second photo */
 
-  Replace with actual second photo later.
-*/
-
-.philosophy-photo-placeholder {
-  width: 260px;
-  height: 355px;
+.philosophy-photo {
+  width: 330px;
+  height: 370px;
 
   position: relative;
   z-index: 2;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
   background: var(--white);
 
   border-radius: 135px 135px 0 0;
 
   box-shadow:
-    0 20px 50px rgba(34, 73, 62, .12);
+    0 20px 50px rgba(34, 73, 62, 0.12);
+}
 
-  color: var(--primary);
+.philosophy-photo img {
+  width: 100%;
+  height: 100%;
 
-  font-family: Georgia, 'Times New Roman', serif;
+  display: block;
 
-  font-size: 1.25rem;
+  object-fit: cover;
+  object-position: center center;
 }
 
 
-/* Decorative element */
+/* ---------------------------------
+   Philosophy Accent
+--------------------------------- */
 
 .philosophy-accent {
   position: absolute;
@@ -464,9 +489,9 @@ em {
 }
 
 
-/* ---------------------------------
-   Tablet
---------------------------------- */
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 900px) {
 
@@ -490,9 +515,9 @@ em {
 }
 
 
-/* ---------------------------------
-   Mobile
---------------------------------- */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 760px) {
 
@@ -515,7 +540,7 @@ em {
   }
 
   .hero-text {
-    font-size: .88rem;
+    font-size: 0.88rem;
   }
 
   .hero-actions {
@@ -535,9 +560,13 @@ em {
     border-radius: 90px 20px 90px 20px;
   }
 
-  .doctor-photo-placeholder {
+  .doctor-photo {
     width: 205px;
     height: 285px;
+  }
+
+  .doctor-photo img {
+    object-position: center top;
   }
 
   .hero-decoration {
@@ -571,11 +600,11 @@ em {
   }
 
   .trust-item strong {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .trust-item span {
-    font-size: .67rem;
+    font-size: 0.67rem;
   }
 
 
@@ -605,9 +634,9 @@ em {
     border-radius: 24px 90px 24px 90px;
   }
 
-  .philosophy-photo-placeholder {
-    width: 205px;
-    height: 285px;
+  .philosophy-photo {
+    width: 245px;
+    height: 310px;
   }
 
   .philosophy-accent {
@@ -620,9 +649,9 @@ em {
 }
 
 
-/* ---------------------------------
-   Small Mobile
---------------------------------- */
+/* =================================
+   SMALL MOBILE
+================================= */
 
 @media (max-width: 480px) {
 
@@ -632,6 +661,7 @@ em {
 
   .hero-actions {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
@@ -648,11 +678,11 @@ em {
   }
 
   .trust-item strong {
-    font-size: .82rem;
+    font-size: 0.82rem;
   }
 
   .trust-item span {
-    font-size: .62rem;
+    font-size: 0.62rem;
   }
 
   .floating-card {
@@ -660,10 +690,10 @@ em {
   }
 
   .floating-card strong {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   .floating-card small {
-    font-size: .62rem;
+    font-size: 0.62rem;
   }
 }
