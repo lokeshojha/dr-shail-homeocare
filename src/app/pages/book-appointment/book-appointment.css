@@ -89,6 +89,35 @@ em {
 }
 
 
+/* Hero animation */
+
+.hero-animation {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: heroFadeUp .7s ease forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: .05s;
+}
+
+.hero-delay-2 {
+  animation-delay: .15s;
+}
+
+.hero-delay-3 {
+  animation-delay: .25s;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Appointment Section */
 
 .appointment-section {
@@ -105,6 +134,27 @@ em {
   gap: 70px;
 
   align-items: start;
+}
+
+
+/* Scroll animation */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-card-animation {
+  transition-delay: .12s;
 }
 
 
@@ -151,6 +201,16 @@ em {
   border-radius: 16px;
 
   background: #f8faf8;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.request-note:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 28px rgba(31, 81, 68, .06);
 }
 
 .note-icon {
@@ -460,6 +520,14 @@ form {
 
 .submit-button span {
   margin-left: 6px;
+
+  transition: transform .2s ease;
+}
+
+.submit-button:hover span {
+  display: inline-block;
+
+  transform: translateX(3px);
 }
 
 .form-note {
@@ -491,6 +559,20 @@ form {
   padding: 25px 15px;
 
   text-align: center;
+
+  animation: successFadeIn .5s ease;
+}
+
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .success-icon {
@@ -637,6 +719,40 @@ form {
     min-height: 480px;
 
     padding: 20px 5px;
+  }
+
+  .form-card-animation {
+    transition-delay: 0s;
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-animation {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .success-state {
+    animation: none;
+  }
+
+  .request-note,
+  .submit-button,
+  .secondary-button,
+  .submit-button span {
+    transition: none;
   }
 
 }

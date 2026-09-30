@@ -2,34 +2,31 @@
 
   <!-- Hero -->
   <section class="library-hero">
-
     <div class="section-shell">
 
-      <p class="eyebrow">
+      <p class="eyebrow hero-animation hero-delay-1">
         Health Library
       </p>
 
-      <h1>
+      <h1 class="hero-animation hero-delay-2">
         Understand your health,
         <em>one step at a time.</em>
       </h1>
 
-      <p class="hero-description">
+      <p class="hero-description hero-animation hero-delay-3">
         Explore general health information and helpful topics designed
         to support better conversations about your wellbeing.
       </p>
 
     </div>
-
   </section>
 
 
   <!-- Topics -->
   <section class="library-section">
-
     <div class="section-shell">
 
-      <div class="section-heading">
+      <div class="section-heading animate-on-scroll">
 
         <p class="eyebrow">
           Explore Topics
@@ -53,7 +50,11 @@
 
         @for (topic of topics; track topic.title) {
 
-          <article class="topic-card">
+          <article
+            class="topic-card animate-on-scroll"
+            [class.card-delay-1]="$index % 3 === 1"
+            [class.card-delay-2]="$index % 3 === 2"
+          >
 
             <div class="topic-icon">
               {{ topic.icon }}
@@ -78,14 +79,13 @@
       </div>
 
 
-      <div class="library-disclaimer">
+      <div class="library-disclaimer animate-on-scroll">
         <sup>*</sup>
         This information is for general educational purposes only and
         is not a substitute for professional medical advice or diagnosis.
       </div>
 
     </div>
-
   </section>
 
 </main>

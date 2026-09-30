@@ -2,34 +2,31 @@
 
   <!-- Hero -->
   <section class="faq-hero">
-
     <div class="section-shell">
 
-      <p class="eyebrow">
+      <p class="eyebrow hero-animation hero-delay-1">
         Frequently Asked Questions
       </p>
 
-      <h1>
+      <h1 class="hero-animation hero-delay-2">
         Answers to help you
         <em>feel informed.</em>
       </h1>
 
-      <p class="hero-description">
+      <p class="hero-description hero-animation hero-delay-3">
         Find answers to common questions about consultations,
         appointments and the care experience at Dr. Shail HomeoCare.
       </p>
 
     </div>
-
   </section>
 
 
   <!-- FAQ -->
   <section class="faq-section">
-
     <div class="section-shell">
 
-      <div class="section-heading">
+      <div class="section-heading animate-on-scroll">
 
         <p class="eyebrow">
           Good to Know
@@ -47,7 +44,11 @@
 
         @for (faq of faqs; track $index) {
 
-          <div class="faq-item">
+          <div
+            class="faq-item animate-on-scroll"
+            [class.faq-delay-1]="$index % 3 === 1"
+            [class.faq-delay-2]="$index % 3 === 2"
+          >
 
             <button
               class="faq-question"
@@ -93,7 +94,6 @@
       </div>
 
     </div>
-
   </section>
 
 </main>

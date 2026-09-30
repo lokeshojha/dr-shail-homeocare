@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
+
 import { CLINIC_CONFIG } from '../../shared/config/clinic.config';
 
 @Component({
@@ -9,9 +14,11 @@ import { CLINIC_CONFIG } from '../../shared/config/clinic.config';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home {
+export class Home implements AfterViewInit, OnDestroy {
 
   readonly clinic = CLINIC_CONFIG;
+
+  private observer?: IntersectionObserver;
 
   get whatsappLink(): string {
     const message = encodeURIComponent(
@@ -19,5 +26,43 @@ export class Home {
     );
 
     return `https://wa.me/${this.clinic.whatsappNumber}?text=${message}`;
+  }
+
+  ngAfterViewInit(): void {
+    this.setupScrollAnimations();
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  private setupScrollAnimations(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add('is-visible');
+
+          this.observer?.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    const animatedElements =
+      document.querySelectorAll('.animate-on-scroll');
+
+    animatedElements.forEach((element) => {
+      this.observer?.observe(element);
+    });
   }
 }

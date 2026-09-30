@@ -2,34 +2,31 @@
 
   <!-- Hero -->
   <section class="contact-hero">
-
     <div class="section-shell">
 
-      <p class="eyebrow">
+      <p class="eyebrow hero-animation hero-delay-1">
         Get in Touch
       </p>
 
-      <h1>
+      <h1 class="hero-animation hero-delay-2">
         We're here to
         <em>listen.</em>
       </h1>
 
-      <p class="hero-description">
+      <p class="hero-description hero-animation hero-delay-3">
         Have a question about a consultation or the appointment process?
         Get in touch with Dr. Shail HomeoCare.
       </p>
 
     </div>
-
   </section>
 
 
   <!-- Contact Details -->
   <section class="contact-section">
-
     <div class="section-shell">
 
-      <div class="section-heading">
+      <div class="section-heading animate-on-scroll">
 
         <p class="eyebrow">
           Contact Details
@@ -52,9 +49,9 @@
       <div class="contact-cards">
 
         <!-- WhatsApp -->
-
         <a
-          class="contact-card"
+          class="contact-card animate-on-scroll"
+          [class.card-delay-1]="false"
           [href]="whatsappLink"
           target="_blank"
           rel="noopener noreferrer"
@@ -84,8 +81,9 @@
 
 
         <!-- Email -->
-
-        <div class="contact-card">
+        <div
+          class="contact-card animate-on-scroll card-delay-1"
+        >
 
           <div class="contact-icon">
             @
@@ -112,8 +110,9 @@
 
 
         <!-- Consultation Locations -->
-
-        <div class="contact-card">
+        <div
+          class="contact-card animate-on-scroll card-delay-2"
+        >
 
           <div class="contact-icon">
             ⌖
@@ -142,7 +141,6 @@
       </div>
 
     </div>
-
   </section>
 
 </main>

@@ -17,7 +17,9 @@
 }
 
 
-/* Shared */
+/* =================================
+   COMMON
+================================= */
 
 .section-shell {
   width: min(1160px, 92vw);
@@ -29,10 +31,10 @@
 
   color: var(--primary);
 
-  font-size: .68rem;
+  font-size: 0.68rem;
   font-weight: 800;
 
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -46,7 +48,7 @@ h3 {
 h1,
 h2 {
   line-height: 1.08;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
 
 h1 {
@@ -69,7 +71,9 @@ em {
 }
 
 
-/* Hero */
+/* =================================
+   HERO
+================================= */
 
 .about-hero {
   padding: 38px 0 35px;
@@ -84,22 +88,66 @@ em {
 
   color: var(--muted);
 
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 
-/* Main About Section */
+/* =================================
+   HERO ANIMATION
+================================= */
+
+.hero-animation {
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  animation:
+    heroFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.05s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.15s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.25s;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =================================
+   MAIN ABOUT SECTION
+================================= */
 
 .about-main {
   padding: 80px 0 90px;
+
   background: var(--white);
 }
 
 .about-main-grid {
   display: grid;
 
-  grid-template-columns: 300px 1fr .9fr;
+  grid-template-columns: 300px 1fr 0.9fr;
 
   gap: 42px;
 
@@ -107,10 +155,15 @@ em {
 }
 
 
+/* =================================
+   DOCTOR IMAGE
+================================= */
+
 .doctor-image {
   height: 450px;
 
   display: flex;
+
   align-items: flex-end;
   justify-content: center;
 
@@ -119,8 +172,21 @@ em {
   border-radius: 160px 28px 160px 28px;
 
   overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.doctor-image.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
 
 .doctor-image img {
   width: 100%;
@@ -130,10 +196,36 @@ em {
 
   object-fit: cover;
   object-position: center center;
+
+  transition:
+    transform 0.8s ease;
 }
+
+.doctor-image:hover img {
+  transform: scale(1.035);
+}
+
+
+/* =================================
+   DOCTOR CONTENT
+================================= */
 
 .doctor-content {
   max-width: 480px;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.doctor-content.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 
 .doctor-content h2 {
@@ -145,22 +237,26 @@ em {
 
   color: var(--primary);
 
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-weight: 700;
 
   line-height: 1.5;
 }
 
-.doctor-content>p:not(.eyebrow):not(.doctor-title) {
+.doctor-content > p:not(.eyebrow):not(.doctor-title) {
   margin: 0 0 14px;
 
   color: var(--muted);
 
-  font-size: .84rem;
+  font-size: 0.84rem;
+
   line-height: 1.7;
 }
 
-/* Button */
+
+/* =================================
+   BUTTON
+================================= */
 
 .button {
   display: inline-flex;
@@ -177,26 +273,34 @@ em {
   border-radius: 8px;
 
   background: var(--primary);
+
   color: var(--white);
 
   text-decoration: none;
 
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-weight: 700;
 
   transition:
-    background .2s ease,
-    transform .2s ease;
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button:hover {
   background: var(--primary-dark);
 
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(31, 81, 68, 0.15);
 }
 
 
-/* Approach */
+/* =================================
+   APPROACH
+================================= */
+
 .approach-section {
   padding: 0;
 }
@@ -205,6 +309,20 @@ em {
   max-width: 430px;
 
   margin-bottom: 25px;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-heading.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 
 .approach-grid {
@@ -215,6 +333,11 @@ em {
   gap: 12px;
 }
 
+
+/* =================================
+   APPROACH CARDS
+================================= */
+
 .approach-card {
   padding: 20px 22px;
 
@@ -224,17 +347,30 @@ em {
 
   background: var(--white);
 
-  box-shadow: 0 6px 24px rgba(31, 81, 68, .04);
+  box-shadow:
+    0 6px 24px rgba(31, 81, 68, 0.04);
+
+  opacity: 0;
+
+  transform: translateY(25px);
 
   transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s ease;
+}
+
+.approach-card.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 
 .approach-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 
-  box-shadow: 0 12px 30px rgba(31, 81, 68, .08);
+  box-shadow:
+    0 12px 30px rgba(31, 81, 68, 0.08);
 }
 
 .number {
@@ -244,10 +380,10 @@ em {
 
   color: var(--primary);
 
-  font-size: .65rem;
+  font-size: 0.65rem;
   font-weight: 800;
 
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 }
 
 .approach-card h3 {
@@ -263,11 +399,32 @@ em {
 
   color: var(--muted);
 
-  font-size: .76rem;
+  font-size: 0.76rem;
+
   line-height: 1.6;
 }
 
-/* Tablet */
+
+/* =================================
+   STAGGER DELAYS
+================================= */
+
+.delay-1 {
+  transition-delay: 0.12s;
+}
+
+.delay-2 {
+  transition-delay: 0.24s;
+}
+
+.delay-3 {
+  transition-delay: 0.36s;
+}
+
+
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 1100px) {
 
@@ -290,11 +447,12 @@ em {
 
     gap: 14px;
   }
-
 }
 
 
-/* Mobile */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 700px) {
 
@@ -314,14 +472,12 @@ em {
 
   .doctor-image {
     height: 390px;
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
-  }
 
-  .portrait-placeholder {
-    width: 210px;
-    height: 315px;
+    max-width: 400px;
+
+    width: 100%;
+
+    margin: auto;
   }
 
   .doctor-content {
@@ -337,5 +493,33 @@ em {
   .approach-grid {
     grid-template-columns: 1fr;
   }
+}
 
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-animation,
+  .animate-on-scroll,
+  .doctor-image,
+  .doctor-content,
+  .section-heading,
+  .approach-card {
+    opacity: 1 !important;
+
+    transform: none !important;
+  }
 }

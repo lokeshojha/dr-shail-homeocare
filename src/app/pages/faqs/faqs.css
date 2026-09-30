@@ -89,6 +89,35 @@ em {
 }
 
 
+/* Hero animation */
+
+.hero-animation {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: heroFadeUp .7s ease forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: .05s;
+}
+
+.hero-delay-2 {
+  animation-delay: .15s;
+}
+
+.hero-delay-3 {
+  animation-delay: .25s;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* FAQ Section */
 
 .faq-section {
@@ -104,6 +133,31 @@ em {
 }
 
 
+/* Scroll animation */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-delay-1 {
+  transition-delay: .08s;
+}
+
+.faq-delay-2 {
+  transition-delay: .16s;
+}
+
+
 /* FAQ List */
 
 .faq-list {
@@ -113,6 +167,9 @@ em {
 .faq-item {
   border-bottom: 1px solid var(--border);
 }
+
+
+/* Question */
 
 .faq-question {
   width: 100%;
@@ -147,6 +204,8 @@ em {
 
 .faq-question:hover {
   color: var(--primary);
+
+  padding-left: 8px;
 }
 
 .faq-question:focus-visible {
@@ -156,6 +215,9 @@ em {
 
   border-radius: 4px;
 }
+
+
+/* Plus / Minus */
 
 .faq-icon {
   flex: 0 0 30px;
@@ -176,6 +238,14 @@ em {
   font-weight: 400;
 
   line-height: 1;
+
+  transition:
+    transform .25s ease,
+    background .2s ease;
+}
+
+.faq-question:hover .faq-icon {
+  background: #d8ebe4;
 }
 
 
@@ -183,6 +253,20 @@ em {
 
 .faq-answer {
   padding: 0 55px 22px 4px;
+
+  animation: answerReveal .3s ease;
+}
+
+@keyframes answerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .faq-answer p {
@@ -222,6 +306,10 @@ em {
     font-size: .84rem;
   }
 
+  .faq-question:hover {
+    padding-left: 2px;
+  }
+
   .faq-icon {
     flex-basis: 28px;
 
@@ -231,6 +319,34 @@ em {
 
   .faq-answer {
     padding: 0 35px 20px 2px;
+  }
+
+  .faq-delay-1,
+  .faq-delay-2 {
+    transition-delay: 0s;
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-animation {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .faq-answer {
+    animation: none;
   }
 
 }

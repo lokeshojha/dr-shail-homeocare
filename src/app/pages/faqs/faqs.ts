@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 interface Faq {
@@ -13,9 +17,11 @@ interface Faq {
   templateUrl: './faqs.html',
   styleUrl: './faqs.css'
 })
-export class Faqs {
+export class Faqs implements AfterViewInit, OnDestroy {
 
   openFaq: number | null = null;
+
+  private observer?: IntersectionObserver;
 
   readonly faqs: Faq[] = [
     {
@@ -60,7 +66,44 @@ export class Faqs {
     }
   ];
 
+  ngAfterViewInit(): void {
+    this.setupScrollAnimations();
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
   toggleFaq(index: number): void {
     this.openFaq = this.openFaq === index ? null : index;
+  }
+
+  private setupScrollAnimations(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add('is-visible');
+          this.observer?.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    const animatedElements =
+      document.querySelectorAll('.animate-on-scroll');
+
+    animatedElements.forEach((element) => {
+      this.observer?.observe(element);
+    });
   }
 }

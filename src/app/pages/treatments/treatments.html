@@ -1,21 +1,36 @@
 <main>
 
+  <!-- =================================
+       HERO
+  ================================= -->
+
   <section class="treatments-hero">
 
     <div class="section-shell">
-      <h1>
+
+      <p class="eyebrow hero-animation hero-delay-1">
+        Areas of Care
+      </p>
+
+      <h1 class="hero-animation hero-delay-2">
         Care that looks at
         <em>the whole you.</em>
       </h1>
-       <p class="hero-description">
+
+      <p class="hero-description hero-animation hero-delay-3">
         Explore the areas of care offered at Dr. Shail HomeoCare.
         Every consultation begins with understanding the individual,
         their symptoms and their health history.
       </p>
+
     </div>
 
   </section>
 
+
+  <!-- =================================
+       TREATMENTS
+  ================================= -->
 
   <section class="treatments-section">
 
@@ -25,21 +40,21 @@
 
         @for (treatment of treatments; track treatment.name) {
 
-        <article class="treatment-card">
+          <article class="treatment-card animate-on-scroll">
 
-          <div class="treatment-icon">
-            {{ treatment.icon }}
-          </div>
+            <div class="treatment-icon">
+              {{ treatment.icon }}
+            </div>
 
-          <h3>
-            {{ treatment.name }}
-          </h3>
+            <h3>
+              {{ treatment.name }}
+            </h3>
 
-          <p>
-            {{ treatment.description }}
-          </p>
+            <p>
+              {{ treatment.description }}
+            </p>
 
-        </article>
+          </article>
 
         }
 

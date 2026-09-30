@@ -1,42 +1,53 @@
 <main>
 
-  <!-- Hero -->
+  <!-- =================================
+       HERO
+  ================================= -->
+
   <section class="hero">
     <div class="section-shell hero-grid">
 
       <!-- Hero Content -->
       <div class="hero-copy">
 
-        <p class="eyebrow">
+        <p class="eyebrow hero-animation hero-delay-1">
           {{ clinic.name }}
         </p>
 
-        <h1>
+        <h1 class="hero-animation hero-delay-2">
           Healing Beyond
           <em>Symptoms.</em>
         </h1>
 
-        <p class="hero-text">
+        <p class="hero-text hero-animation hero-delay-3">
           Personalized homeopathic care focused on
           understanding the individual, not just the symptoms.
         </p>
 
-        <p class="doctor-name">
+        <p class="doctor-name hero-animation hero-delay-4">
           {{ clinic.doctorName }}
         </p>
 
-        <p class="doctor-title">
+        <p class="doctor-title hero-animation hero-delay-4">
           {{ clinic.doctorTitle }}
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-actions hero-animation hero-delay-5">
 
-          <a class="button" routerLink="/book-appointment">
+          <a
+            class="button"
+            routerLink="/book-appointment"
+          >
             Book an Appointment
             <span>→</span>
           </a>
 
-          <a class="whatsapp-link" [href]="whatsappLink" target="_blank" rel="noopener noreferrer">
+          <a
+            class="whatsapp-link"
+            [href]="whatsappLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             WhatsApp Us
           </a>
 
@@ -51,7 +62,10 @@
         <div class="hero-decoration"></div>
 
         <div class="doctor-photo">
-          <img src="/assets/images/dr-shail-home.jpg.jpg" alt="Dr. Shail Pandey" />
+          <img
+            src="/assets/images/dr-shail-home.jpg.jpg"
+            alt="Dr. Shail Pandey"
+          />
         </div>
 
         <div class="floating-card">
@@ -65,25 +79,28 @@
   </section>
 
 
-  <!-- Trust / Credentials -->
+  <!-- =================================
+       TRUST / CREDENTIALS
+  ================================= -->
+
   <section class="trust-section">
 
-    <div class="trust-item">
+    <div class="trust-item animate-on-scroll">
       <strong>6+ Years</strong>
       <span>Clinical Experience</span>
     </div>
 
-    <div class="trust-item">
+    <div class="trust-item animate-on-scroll delay-1">
       <strong>28,000+</strong>
       <span>Patients Treated</span>
     </div>
 
-    <div class="trust-item">
+    <div class="trust-item animate-on-scroll delay-2">
       <strong>Personalized</strong>
       <span>Treatment Plans</span>
     </div>
 
-    <div class="trust-item">
+    <div class="trust-item animate-on-scroll delay-3">
       <strong>Online & In-Person</strong>
       <span>Consultations</span>
     </div>
@@ -91,13 +108,16 @@
   </section>
 
 
-  <!-- Our Philosophy -->
+  <!-- =================================
+       OUR PHILOSOPHY
+  ================================= -->
+
   <section class="philosophy-section">
 
     <div class="section-shell philosophy-grid">
 
       <!-- Philosophy Content -->
-      <div class="philosophy-content">
+      <div class="philosophy-content animate-on-scroll">
 
         <p class="eyebrow">
           Our Philosophy
@@ -121,7 +141,10 @@
           needs.
         </p>
 
-        <a class="text-link" routerLink="/about">
+        <a
+          class="text-link"
+          routerLink="/about"
+        >
           Meet Dr. Shail →
         </a>
 
@@ -129,14 +152,14 @@
 
 
       <!-- Second Doctor Photo -->
-      <div class="philosophy-visual">
+      <div class="philosophy-visual animate-on-scroll">
 
-        <!-- Replace this with the second doctor photo -->
         <div class="philosophy-photo">
-          <img src="/assets/images/dr shail at work.jpeg" alt="Dr. Shail Pandey consulting a patient" />
+          <img
+            src="/assets/images/dr shail at work.jpeg"
+            alt="Dr. Shail Pandey consulting a patient"
+          />
         </div>
-
-        <div class="philosophy-accent"></div>
 
         <div class="philosophy-accent"></div>
 

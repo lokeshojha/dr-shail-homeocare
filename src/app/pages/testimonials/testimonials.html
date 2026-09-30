@@ -2,31 +2,31 @@
 
   <!-- Hero -->
   <section class="testimonials-hero">
-
     <div class="section-shell">
 
-      <h1>
+      <p class="eyebrow hero-animation hero-delay-1">
+        Patient Experiences
+      </p>
+
+      <h1 class="hero-animation hero-delay-2">
         Stories from people
         <em>we've cared for.</em>
       </h1>
 
-      <p class="hero-description">
+      <p class="hero-description hero-animation hero-delay-3">
         Every patient's journey is unique. Here are some experiences
         shared about the consultation and care experience.
       </p>
 
     </div>
-
   </section>
 
 
   <!-- Testimonials -->
   <section class="testimonials-section">
-
     <div class="section-shell">
 
-      <div class="section-heading">
-
+      <div class="section-heading animate-on-scroll">
         <p class="eyebrow">
           Patient Feedback
         </p>
@@ -35,7 +35,6 @@
           Every experience
           <em>matters.</em>
         </h2>
-
       </div>
 
 
@@ -46,7 +45,11 @@
           track $index
         ) {
 
-          <article class="testimonial-card">
+          <article
+            class="testimonial-card animate-on-scroll"
+            [class.card-delay-1]="$index % 3 === 1"
+            [class.card-delay-2]="$index % 3 === 2"
+          >
 
             <div class="quote-mark">
               “
@@ -55,7 +58,6 @@
             <p class="testimonial-text">
               {{ testimonial.text }}
             </p>
-
 
             <div class="testimonial-author">
 
@@ -84,7 +86,6 @@
       </div>
 
     </div>
-
   </section>
 
 </main>
